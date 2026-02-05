@@ -118,6 +118,55 @@ a:focus, button:focus, input:focus {
   .hero h1 { font-size: 3rem; }
 }
 
+/* Mobile-first improvements */
+@media (max-width: 576px) {
+  /* increase tappable areas */
+  .btn {
+    padding: 0.8rem 1rem;
+    font-size: 1.05rem;
+  }
+
+  /* make form controls easier to tap */
+  .form-control, .form-select {
+    padding: 0.75rem 0.8rem;
+    font-size: 1rem;
+  }
+
+  /* product cards: single column for very small screens */
+  .product-card .card-img-top {
+    height: 240px;
+  }
+
+  /* hero smaller on phones */
+  .hero { padding: 2.5rem 0; min-height: 360px; }
+
+  /* increase spacing in header for tap targets */
+  .site-header .navbar { padding: 0.5rem 0.5rem; }
+  .site-header .navbar-toggler { padding: 0.5rem; }
+}
+
+/* Slight layout polish for small screens */
+@media (max-width: 420px) {
+  .card .card-img-top { height: 200px; }
+  .hero { min-height: 320px; }
+}
+
+/* Stack product action buttons on small screens for easier tapping */
+@media (max-width: 576px) {
+  .product-card .mt-auto.d-flex {
+    flex-direction: column !important;
+    gap: 0.5rem;
+  }
+  .product-card .mt-auto .btn {
+    width: 100%;
+  }
+
+  /* make checkout button full width */
+  #checkoutForm .btn-primary {
+    width: 100%;
+  }
+}
+
 /* Utility tweaks */
 .text-muted { color: var(--muted) !important; }
 

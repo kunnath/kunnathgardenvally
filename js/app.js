@@ -304,7 +304,8 @@
   // Render helpers
   function createProductCard(product) {
     const col = document.createElement('div');
-    col.className = 'col-6 col-md-3';
+    // single column on extra-small, two columns on small, four on md+
+    col.className = 'col-12 col-sm-6 col-md-3';
     col.innerHTML = `
       <div class="card product-card h-100" data-id="${product.id}">
         <img src="${product.image}" class="card-img-top" alt="${escapeHtml(product.title)}">
@@ -350,8 +351,8 @@
     el.innerHTML = '';
     for (const p of products) {
       const card = createProductCard(p);
-      // for preview, make columns larger
-      card.className = 'col-6 col-md-4';
+      // for preview, make columns responsive: single column on xs, two on sm, three on md
+      card.className = 'col-12 col-sm-6 col-md-4';
       el.appendChild(card);
     }
   }
