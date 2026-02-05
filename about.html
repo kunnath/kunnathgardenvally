@@ -74,6 +74,18 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/app.js?v=2"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      try {
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+          acceptNode: function (node) { return node.nodeValue && node.nodeValue.includes('€') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT; }
+        }, false);
+        const nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+        nodes.forEach(t => { t.nodeValue = t.nodeValue.replace(/€/g, '₹'); });
+      } catch (e) {}
+    });
+  </script>
 </body>
 </html>

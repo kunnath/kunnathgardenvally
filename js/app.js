@@ -312,7 +312,7 @@
         <div class="card-body d-flex flex-column">
           <div class="mb-1"><small class="text-muted">${escapeHtml(categoryLabel(product.category))}</small></div>
           <h3 class="h6">${escapeHtml(product.title)}</h3>
-          <p class="mb-2 text-muted">€${product.price.toFixed(2)}</p>
+          <p class="mb-2 text-muted">${formatCurrency(product.price)}</p>
           <p class="mb-2 text-muted">${T.STOCK} ${product.stock}</p>
           <div class="mt-auto d-flex">
             <button class="btn btn-outline-success me-2 btn-view" data-id="${product.id}">${T.VIEW}</button>
@@ -333,6 +333,15 @@
   }
 
   function escapeHtml(s) { return String(s).replace(/[&"'<>]/g, (c) => ({'&':'&amp;','"':'&quot;',"'":"&#39;","<":"&lt;",">":"&gt;"}[c])); }
+
+  // Currency formatting helper (INR). Falls back to simple prefix if Intl unsupported.
+  function formatCurrency(value) {
+    try {
+      return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 2 }).format(Number(value));
+    } catch (e) {
+      return '₹' + Number(value).toFixed(2);
+    }
+  }
 
   function renderProductsList() {
     const el = document.getElementById('products-list');
@@ -378,7 +387,7 @@
           <img src="${p.image}" alt="${escapeHtml(p.title)}" width="96" height="64" style="object-fit:cover;border-radius:8px;margin-right:12px;">
           <div class="flex-grow-1">
             <strong>${escapeHtml(p.title)}</strong>
-            <div class="text-muted">€${p.price.toFixed(2)}</div>
+            <div class="text-muted">${formatCurrency(p.price)}</div>
           </div>
           <div class="d-flex align-items-center">
             <input type="number" min="1" max="${p.stock}" value="${item.qty}" class="form-control form-control-sm me-2 cart-qty" data-id="${p.id}" style="width:80px;">
@@ -388,7 +397,7 @@
         cartContainer.appendChild(row);
       }
     }
-    if (cartTotalEl) cartTotalEl.textContent = `€${total.toFixed(2)}`;
+  if (cartTotalEl) cartTotalEl.textContent = formatCurrency(total);
   }
 
   // Product modal dynamic
@@ -439,7 +448,7 @@
     img.src = p.image;
     img.alt = p.title;
     document.getElementById('productModalDesc').textContent = p.description || '';
-  document.getElementById('productModalPrice').textContent = `€${p.price.toFixed(2)}`;
+  document.getElementById('productModalPrice').textContent = formatCurrency(p.price);
   document.getElementById('productModalStock').textContent = `${T.STOCK} ${p.stock}`;
 
     const modalAdd = document.getElementById('modalAddToCart');
@@ -778,7 +787,7 @@
           <img src="${p.image}" alt="${escapeHtml(p.title)}" width="80" height="60" style="object-fit:cover;border-radius:6px;margin-right:12px;">
           <div class="flex-grow-1">
             <strong>${escapeHtml(p.title)}</strong>
-            <div class="text-muted">€${p.price.toFixed(2)} — ${T.STOCK} ${p.stock} — ${escapeHtml(categoryLabel(p.category))}</div>
+          <div class="text-muted">${formatCurrency(p.price)} — ${T.STOCK} ${p.stock} — ${escapeHtml(categoryLabel(p.category))}</div>
           </div>
           <div>
             <button class="btn btn-sm btn-danger admin-delete" data-id="${p.id}">${T.DELETE}</button>
@@ -831,7 +840,7 @@
       const user = getUsers().find(u => u.id === o.userId) || { name: 'Unknown', email: '' };
       d.innerHTML = `
         <div><strong>${T.ORDER_LABEL} ${o.id}</strong> — ${new Date(o.createdAt).toLocaleString()} by ${escapeHtml(user.name || user.email)}</div>
-        <div class="text-muted">${T.TOTAL_LABEL} €${o.total.toFixed(2)} — ${T.EST_DELIVERY} ${new Date(o.estimatedDelivery).toLocaleDateString()}</div>
+  <div class="text-muted">${T.TOTAL_LABEL} ${formatCurrency(o.total)} — ${T.EST_DELIVERY} ${new Date(o.estimatedDelivery).toLocaleDateString()}</div>
         <div class="mt-2"><em>${T.ITEMS}</em> ${o.items.map(i => i.qty + '×' + (getProducts().find(p=>p.id===i.productId)||{title:'?'}).title).join(', ')}</div>
         <div class="mt-2" id="messages_${o.id}"></div>
         <form class="mt-2 admin-reply-form" data-order="${o.id}">
@@ -898,7 +907,7 @@
               <div class="text-muted">${T.PLACED} ${new Date(o.createdAt).toLocaleString()}</div>
             </div>
             <div class="text-end">
-              <div>${T.TOTAL_LABEL} €${o.total.toFixed(2)}</div>
+              <div>${T.TOTAL_LABEL} ${formatCurrency(o.total)}</div>
               <div class="text-muted">${T.EST_DELIVERY} ${new Date(o.estimatedDelivery).toLocaleString()}</div>
             </div>
           </div>
