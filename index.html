@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>കുന്നത്ത് ഗാർഡൻ വാലി</title>
+  <meta name="description" content="നിങ്ങളുടെ തോട്ടത്തിന് ചെടികളും പഴങ്ങളും വിത്തുകളും. ആരോഗ്യകരമായ ചെടികൾ, പ്രീമിയം വിത്തുകൾ.">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-dark container">
+  <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 2C10 6 6 7 6 11c0 4 6 9 6 9s6-5 6-9c0-4-4-5-6-9z" fill="#4CAF50"/>
+        </svg>
+  <span class="ms-2">കുന്നത്ത് ഗാർഡൻ വാലി</span>
+      </a>
+
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="നാവിഗേഷൻ തുറക്കുക">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="index.html">ഹോം</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">ഉൽപ്പന്നങ്ങൾ</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">ഞങ്ങളേക്കുറിച്ച്</a></li>
+          <li class="nav-item ms-3">
+            <a class="nav-link position-relative" href="#" aria-label="കാർട്ട് കാണുക">
+              <!-- Simple cart icon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 6h15l-1.5 9h-11L6 6z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+                <circle cx="10" cy="20" r="1" fill="currentColor"></circle>
+                <circle cx="18" cy="20" r="1" fill="currentColor"></circle>
+              </svg>
+              <span class="visually-hidden">കാർട്ട്</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero d-flex align-items-center" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <h1 id="hero-heading">നിങ്ങളുടെ തോട്ടം വളർത്തൂ</h1>
+            <p class="lead">ആരോഗ്യകരമായ ചെടികൾ, പുതിയ പഴങ്ങൾ, പ്രീമിയം വിത്തുകൾ — നിങ്ങളുടെ തോട്ടം തുടങ്ങാനും പരിപാലിക്കാനും വേണ്ടതെല്ലാം.</p>
+            <p>
+              <a class="btn btn-primary btn-lg" href="products.html#products">ഇപ്പോൾ ഷോപ്പ് ചെയ്യുക</a>
+            </p>
+          </div>
+          <div class="col-md-5 d-none d-md-block">
+            <!-- Hero image: team / local image -->
+            <img src="/images/team.png" alt="ടീം ചിത്രം" class="img-fluid rounded-3 shadow-sm">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured categories -->
+    <section class="py-5" aria-labelledby="categories-heading">
+      <div class="container">
+        <h2 id="categories-heading" class="mb-4">പ്രധാന വിഭാഗങ്ങൾ</h2>
+        <div class="row g-4">
+          <!-- Plants category -->
+          <div class="col-12 col-md-4">
+            <article class="card h-100 category-card">
+              <img src="/images/image1.png" class="card-img-top" alt="Plants">
+              <div class="card-body">
+                <h3 class="h5">ചെടികൾ</h3>
+                <p class="text-muted">ഇൻഡോർ/ഔട്ട്ഡോർ ചെടികൾ നിങ്ങളുടെ സ്ഥലം പ്രകാശവത്കരിക്കും.</p>
+                <a href="products.html#plants" class="stretched-link">ചെടികൾ കാണുക</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Fruits category -->
+          <div class="col-12 col-md-4">
+            <article class="card h-100 category-card">
+              <img src="/images/image2.png" class="card-img-top" alt="Fresh fruits">
+              <div class="card-body">
+                <h3 class="h5">പഴങ്ങൾ</h3>
+                <p class="text-muted">ഗൃഹ തോട്ടങ്ങൾക്ക് അനുയോജ്യമായ ഫലവൃക്ഷങ്ങൾ.</p>
+                <a href="products.html#fruits" class="stretched-link">പഴങ്ങൾ കാണുക</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Seeds category -->
+          <div class="col-12 col-md-4">
+            <article class="card h-100 category-card">
+              <img src="/images/image3.png" class="card-img-top" alt="Packets of seeds">
+              <div class="card-body">
+                <h3 class="h5">വിത്തുകൾ</h3>
+                <p class="text-muted">ഉയർന്ന ഗുണമേൻമയുള്ള വിത്തുകൾ പച്ചവെള്ളത്തോട്ടങ്ങൾക്കായി.</p>
+                <a href="products.html#seeds" class="stretched-link">വിത്തുകൾ കാണുക</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Small product preview -->
+    <section id="products" class="py-5" aria-labelledby="products-preview-heading">
+      <div class="container">
+  <h2 id="products-preview-heading">പ്രചാരത്തിലുള്ള ഉത്പന്നങ്ങൾ</h2>
+  <p class="text-muted">ശ്രേഷ്ഠ വിൽപ്പനകളുടെ ലളിതമായ ശേഖരം.</p>
+        <div id="products-preview" class="row g-4"></div>
+
+        <div class="mt-4 text-center">
+          <a href="products.html" class="btn btn-outline-dark">എല്ലാ ഉൽപ്പന്നങ്ങളും കാണുക</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer py-5">
+    <div class="container">
+        <div class="row gy-4">
+        <div class="col-12 col-md-6">
+          <h3>കുന്നത്ത് ഗാർഡൻ വാലി</h3>
+          <p class="text-muted">ഉയർന്ന ഗുണമേൻമയുള്ള ചെടികളും വിത്തുകളും പരിപാലനത്തോടെ വിതരണം ചെയ്യുന്നു.</p>
+        </div>
+        <div class="col-12 col-md-3">
+          <h4>ബന്ധപ്പെടുക</h4>
+          <address class="text-muted">kunnath villa<br>koodali 670592<br>India</address>
+          <p class="mb-0"><a href="mailto:sheela@gmail.com">sheela@gmail.com</a></p>
+          <p class="mb-0"><a href="https://maps.app.goo.gl/EQZvgDnfGuRJoD8j9" target="_blank" rel="noopener">Google Map</a></p>
+        </div>
+        <div class="col-12 col-md-3">
+          <h4>ന്യൂസ്‌ലറ്റർ</h4>
+          <form class="d-flex" action="#" method="post" aria-label="Subscribe to newsletter">
+            <input class="form-control me-2" type="email" placeholder="നിങ്ങളുടെ ഇമെയിൽ" aria-label="Email address">
+            <button class="btn btn-primary" type="submit">സബ്സ്ക്രൈബ്</button>
+          </form>
+          <div class="mt-3">
+            <a href="#" class="me-2" aria-label="Facebook">FB</a>
+            <a href="#" class="me-2" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="Twitter">TW</a>
+          </div>
+        </div>
+      </div>
+      <hr class="my-4">
+  <div class="text-center text-muted">© 2026 കുന്നത്ത് ഗാർഡൻ വാലി</div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

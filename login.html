@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ലോഗിൻ — kunnath ഗാർഡൻ ഷോപ്പ്</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-dark container">
+  <a class="navbar-brand" href="index.html">kunnath ഗാർഡൻ ഷോപ്പ്</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">ഹോം</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="py-5">
+    <div class="container" style="max-width:520px;">
+      <h1>ലോഗിൻ</h1>
+      <form id="loginForm">
+        <div class="mb-2"><input id="email" class="form-control" placeholder="ഇമെയിൽ അല്ലെങ്കിൽ മൊബൈൽ" type="text" required></div>
+        <div class="mb-2"><input id="password" class="form-control" placeholder="പാസ്‌വേർഡ്" type="password" required></div>
+        <button class="btn btn-primary" type="submit">ലോഗിൻ</button>
+      </form>
+
+      <div class="mt-3">
+        <small class="text-muted">അത്‍തരം ഇല്ലെങ്കിൽ <a href="#" id="showRegister">അക്കൗണ്ട് ഉണ്ടാക്കുക</a></small>
+      </div>
+
+      <hr>
+
+      <!-- Register form (hidden by default) -->
+      <div id="registerWrap" class="d-none mt-3">
+        <h2>അക്കൗണ്ട് സൃഷ്ടിക്കുക</h2>
+        <form id="registerForm">
+          <div class="mb-2"><input id="reg_name" class="form-control" placeholder="പേര്" type="text" required></div>
+          <div class="mb-2"><input id="reg_email" class="form-control" placeholder="ഇമെയിൽ (ഐച്ഛികം)" type="email"></div>
+          <div class="mb-2"><input id="reg_phone" class="form-control" placeholder="മൊബൈൽ നമ്പർ (ഐച്ഛികം)" type="tel"></div>
+          <div class="mb-2"><input id="reg_password" class="form-control" placeholder="പാസ്‌വേർഡ്" type="password" required></div>
+          <div class="mb-2"><input id="reg_password2" class="form-control" placeholder="പാസ്‌വേർഡ് സ്ഥിരീകരിക്കുക" type="password" required></div>
+          <button class="btn btn-success" type="submit">രജിസ്റ്റർ ചെയ്യുക</button>
+          <button class="btn btn-link" type="button" id="cancelRegister">റദ്ദാക്കുക</button>
+        </form>
+      </div>
+
+      <!-- Demo credentials are available in the project source for local testing (hidden) -->
+      <p class="text-muted visually-hidden">ഡെമോ അക്കൗണ്ടുകൾ: user@example.com / userpass  •  admin@example.com / adminpass</p>
+    </div>
+  </main>
+
+  <footer class="site-footer py-5">
+  <div class="container text-muted text-center">© 2026 kunnath ഗാർഡൻ ഷോപ്പ്</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
