@@ -172,3 +172,20 @@ a:focus, button:focus, input:focus {
 
 /* Small helpers */
 .stretched-link { color: inherit; }
+
+/* Keep checkout form inputs at a normal comfortable size even on small screens
+   The mobile rules enlarge most form controls for tappability, but the cart
+   checkout fields should remain standard height per user's request. */
+@media (max-width: 576px) {
+  #checkoutForm .form-control,
+  #checkoutForm textarea {
+    /* match default Bootstrap spacing more closely */
+    padding: 0.375rem 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.25;
+  }
+  /* keep the order button full width but avoid oversized inputs */
+  #checkoutForm .btn-primary {
+    width: 100%;
+  }
+}
